@@ -45,6 +45,68 @@
         <button menuClose ion-item (click)="openPage('categories')">{{ 'Categories' | translate }}
           <ion-icon item-left name="apps"></ion-icon>
         </button>
+
+        
+        <ion-list style="margin:0;">
+          <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}" style="margin: 0;color: #000000;background-color: white;padding-right: 0px; margin: 0; ">
+            <ion-row> 
+              <ion-col col-2 style="line-height: 2;font-size: 16px;">  <ion-icon name="hammer"></ion-icon>
+              </ion-col>
+              <ion-col col-8 style="line-height: 2;font-size: 16px;">Product Services</ion-col>
+              <ion-col col-2 *ngIf="sublevel" style="line-height: 2.5;"><ion-icon style="color:#000000;margin-top: 0px;font-size: 2rem;" item-right [name]="isGroupShown(1) ? 'ios-arrow-down-outline' : 'ios-arrow-forward'"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row *ngIf="isGroupShown(1)">
+              <ion-list style="width: 100%;">
+                <button style="background: transparent;color: #000000;" menuClose ion-item *ngFor="let p of submenus">
+                  {{p.title}}
+                </button>
+              </ion-list>
+            </ion-row>
+          </ion-item>
+        </ion-list>   
+
+        <!-- <ion-list style="background: #ffffff;margin:0;">
+          <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(i)}" style="margin: 0;color: #000000;background-color: transparent;padding-right: 0px; margin: 0; ">
+            <ion-row> 
+              <ion-col col-10 style="line-height: 2;font-size: 16px;">Product Services</ion-col>
+              <ion-col col-2 *ngIf="sublevel" style="line-height: 2.5;"><ion-icon style="color:#000000;margin-top: 0px;font-size: 2rem;" item-right [name]="isGroupShown(1) ? 'ios-arrow-down-outline' : 'ios-arrow-forward'"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row *ngIf="isGroupShown(1)">
+              <ion-list style="background: #ffffff;width: 100%;">
+                <button style="background: transparent;color: #000000;" menuClose ion-item *ngFor="let p of submenus" (click)="openPage(p)">
+                  {{p.title}}
+                </button>
+              </ion-list>
+            </ion-row>
+          </ion-item>
+        </ion-list>   -->
+
+        <!-- <div class="tabs">
+          <div class="tab">
+            <input type="checkbox" id="chck1">
+            <label class="tab-label" for="chck1">
+              <ion-icon item-left name="construct"></ion-icon> <span style="width:100%;padding-left: 30px;" padding-right>Product
+                Services </span>
+            </label>
+            <div class="tab-content">
+              <ion-list  no-lines >
+                <ion-item no-lines>
+                  Battery Services
+                </ion-item>
+                <ion-item no-lines>
+                  Invertor & UPS Services
+                </ion-item>
+                <ion-item no-lines>
+                  A/C & RO Services
+                </ion-item>
+              </ion-list>
+            </div>
+          </div>        
+        </div> -->
+
+
+
+
         <button menuClose ion-item (click)="openPage('newest')">{{ 'Shop' | translate }}
           <ion-icon item-left name="cash"></ion-icon>
         </button>

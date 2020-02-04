@@ -154,8 +154,52 @@ export class MyApp {
 
   }
 
+
+  submenus: Array<{title: string, component: any}>;
+  shownGroup = null;
+  shownGroup1 = null;
+  sublevel='yes';
+  sublevel1='no';
+  toggleGroup(group) {
+    console.log("Group  "+group);
+    if (this.isGroupShown(group)) {
+        this.shownGroup = null;
+    } else {
+        this.shownGroup = group;
+        this.shownGroup1 = null;
+    }
+  }
+  isGroupShown(group) {
+      return this.shownGroup === group;
+  }
+
+  toggleGroup1(group) {
+    console.log("Group  "+group);
+    if (this.isGroupShown1(group)) {
+        this.shownGroup1 = null;
+
+    } else {
+        this.shownGroup1 = group;
+        this.shownGroup = null;
+    }
+  }
+  isGroupShown1(group) {
+      return this.shownGroup1 === group;
+  }
+
+  
+
   initializeApp() {
     this.platform.ready().then(() => {
+
+
+      this.submenus = [ 
+        { title: 'Battery Services', component: "" },
+        { title: 'Invertory & UPS Services', component: "" },
+        { title: 'A/C & RO Services', component: "" },
+        
+      ];
+
       this.config.siteSetting().then((value) => {
         this.storage.get('firsttimeApp').then((val) => {
           let value = val;
