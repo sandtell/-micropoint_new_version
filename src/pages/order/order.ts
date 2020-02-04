@@ -300,7 +300,7 @@ export class OrderPage {
   paypalPayment() {
     this.loading.autoHide(2000);
     this.payPal.init({
-      PayPalEnvironmentProduction: this.paypalClientId,
+      PayPalEnvironmentProduction: this.paypalEnviroment, //this.paypalClientId,
       PayPalEnvironmentSandbox: this.paypalClientId
     }).then(() => {
       // this.loading.hide();
