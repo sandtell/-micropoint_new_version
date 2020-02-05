@@ -47,13 +47,13 @@
         </button>
 
         
-        <ion-list style="margin:0;">
-          <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}" style="margin: 0;color: #000000;background-color: white;padding-right: 0px; margin: 0; ">
+        <div style="margin:0;">
+          <div text-wrap   (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}" style="margin: 0;color: #000000;background-color: #ffffff;padding-right: 0px; margin: 0; border-bottom: 1px solid #dedede;">
             <ion-row> 
-              <ion-col col-2 style="line-height: 2;font-size: 16px;">  <ion-icon name="hammer"></ion-icon>
+              <ion-col text-center col-2 style="line-height: 2;font-size: 16px;">  <ion-icon name="hammer"></ion-icon>
               </ion-col>
-              <ion-col col-8 style="line-height: 2;font-size: 16px;">Product Services</ion-col>
-              <ion-col col-2 *ngIf="sublevel" style="line-height: 2.5;"><ion-icon style="color:#000000;margin-top: 0px;font-size: 2rem;" item-right [name]="isGroupShown(1) ? 'ios-arrow-down-outline' : 'ios-arrow-forward'"></ion-icon></ion-col>
+              <ion-col col-9 style="line-height: 2.5;font-size: 16px;padding-left: 12px;">Product Services</ion-col>
+              <ion-col col-1 *ngIf="sublevel" style="line-height: 2.5;font-size: 16px;"><ion-icon style="color:#000000;margin-top: 0px;font-size: 2rem;" [name]="isGroupShown(1) ? 'ios-arrow-down-outline' : 'ios-arrow-forward'"></ion-icon></ion-col>
             </ion-row>
             <ion-row *ngIf="isGroupShown(1)">
               <ion-list style="width: 100%;">
@@ -62,8 +62,8 @@
                 </button>
               </ion-list>
             </ion-row>
-          </ion-item>
-        </ion-list>   
+          </div>
+        </div>   
 
         <!-- <ion-list style="background: #ffffff;margin:0;">
           <ion-item text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(i)}" style="margin: 0;color: #000000;background-color: transparent;padding-right: 0px; margin: 0; ">
